@@ -18,7 +18,7 @@ module Ransack
       end
 
       def bound?
-        attr_name.present? && parent.present?
+        attr_name.present? && parent
       end
 
       def reset_binding!

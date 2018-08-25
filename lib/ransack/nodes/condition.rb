@@ -41,7 +41,7 @@ module Ransack
               raise ArgumentError, "No valid predicate for #{key}"
             end
 
-            if context.present?
+            if context
               str = context.ransackable_alias(str)
             end
 
@@ -52,7 +52,7 @@ module Ransack
               nil
             end
 
-            if context.present? && context.attribute_method?(str)
+            if context && context.attribute_method?(str)
               attributes = [str]
             else
               attributes = str.split(/_and_|_or_/)

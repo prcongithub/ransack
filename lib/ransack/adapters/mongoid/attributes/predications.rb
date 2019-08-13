@@ -40,7 +40,7 @@ module Ransack
           end
 
           def not_in(other)
-            { "$not" => { name => { "$in" => other } } }.to_inquiry
+            { name => { "$nin" => other } }.to_inquiry
           end
 
           def not_in_any(others)
